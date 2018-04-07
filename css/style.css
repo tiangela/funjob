@@ -250,14 +250,15 @@ h2 {
   text-align: center;
 }
 .catalog__item {
-  margin: 0 auto;
+  margin: 35px auto 0;
   padding-top: 10px;
   display: block;
   box-sizing: border-box;
   width: 240px;
   min-height: 400px;
+  cursor: pointer;
   background-color: #f2f2f2;
-  border-radius: 0px 5px 5px 5px;
+  border-radius: 0 5px 5px 5px;
   position: relative;
   background-image: url("../img/cat.png");
   background-repeat: no-repeat;
@@ -266,29 +267,36 @@ h2 {
 }
 .catalog__item:before {
   content: "";
-  width: 89%;
+  width: 219px;
   height: 30px;
   position: absolute;
-  bottom: 100%;
-  left: 29px;
+  top: -21px;
+  left: 19px;
   background: #f2f2f2;
+  box-shadow: inset -2px 2px 0 0 #1698d9;
+  z-index: 10;
 }
 .catalog__item:after {
   content: "";
-  width: 0;
-  height: 0;
+  width: 29.8px;
+  height: 27.8px;
+  background-color: #f2f2f2;
   position: absolute;
-  top: -31px;
-  left: -2px;
-  border: 15px solid #f2f2f2;
-  border-left: 16px solid transparent;
-  border-top: 16px solid transparent;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: -15px;
+  left: 4px;
+  /* border: 17px solid #f2f2f2; */
+  box-shadow: inset 2px 0 0 0 #1698d9;
 }
 .catalog__text {
   margin-left: 24px;
 }
 .catalog__motto {
   font-size: 14px;
+  margin-top: -27px;
+  position: absolute;
+  z-index: 10;
 }
 .catalog__motto--hover {
   display: none;
@@ -297,23 +305,20 @@ h2 {
   font-size: 18px;
   color: #000;
 }
-.catalog__servings,
-.catalog__bonus {
+.catalog__bonus,
+.catalog__servings {
   font-size: 12px;
   line-height: 14px;
 }
-.catalog__servings span,
-.catalog__bonus span {
+.catalog__bonus span,
+.catalog__servings span {
   font-weight: bold;
 }
 .catalog__description {
   margin-top: 20px;
 }
 .catalog__weight {
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 15px;
+  padding: 20px 10px 15px;
   position: absolute;
   width: 70px;
   height: 70px;
