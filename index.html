@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Нямушка</title>
+  <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -12,22 +12,60 @@
   <main class="main">
     <div class="main__container">
     <section class="catalog">
-       <h1 class="catalog__title">Ты сегодня покормил кота?</h1>
+      <h1 class="catalog__title">Ты сегодня покормил кота?</h1>
       <div class="catalog__wrapper">
-      <article class="catalog__item">
+      <article class="catalog__item catalog__item--default">
         <div class="catalog__text">
         <p class="catalog__motto catalog__motto--active">Сказочное заморское явство</p>
         <p class="catalog__motto catalog__motto--hover">Котэ не одобряет?</p>
         <h2 class="catalog__item-title">Нямушка</h2>
         <p class="catalog__flavor">с фуагра</p>
-        <div class="catalog__description">
-        <p class="catalog__servings"><span>10</span> порций</p>
-        <p class="catalog__bonus">мышь в подарок</p>
-        </div>
+        <ul class="catalog__description">
+        <li class="catalog__servings"><span>10</span> порций</li>
+        <li class="catalog__bonus">мышь в подарок</li>
+      </ul>
         </div>
         <div class="catalog__weight"><p class="catalog__weight-text">0,5 <span>кг</span></p></div>
       </article>
-      <p class="catalog__order-text"><a href="#" class="catalog__order-link"></a></p>
+      <p class="catalog__order-text catalog__order-text--default">Чего сидишь? Порадуй котэ, <button class="catalog__order-link">купи.</button></p>
+      <p class="catalog__order-text catalog__order-text--selected">Печень утки разварная с артишоками.</p>
+      <p class="catalog__order-text catalog__order-text--disabled">Печалька, с фуа-гра закончился.</p>
+      </div>
+      <div class="catalog__wrapper">
+      <article class="catalog__item catalog__item--default">
+        <div class="catalog__text">
+        <p class="catalog__motto catalog__motto--active">Сказочное заморское явство</p>
+        <p class="catalog__motto catalog__motto--hover">Котэ не одобряет?</p>
+        <h2 class="catalog__item-title">Нямушка</h2>
+        <p class="catalog__flavor">с фуагра</p>
+        <ul class="catalog__description">
+        <li class="catalog__servings"><span>10</span> порций</li>
+        <li class="catalog__bonus">мышь в подарок</li>
+      </ul>
+        </div>
+        <div class="catalog__weight"><p class="catalog__weight-text">0,5 <span>кг</span></p></div>
+      </article>
+      <p class="catalog__order-text catalog__order-text--default">Чего сидишь? Порадуй котэ, <button href="#" class="catalog__order-link">купи.</button></p>
+      <p class="catalog__order-text catalog__order-text--selected">Печень утки разварная с артишоками.</p>
+      <p class="catalog__order-text catalog__order-text--disabled">Печалька, с фуа-гра закончился.</p>
+      </div>
+      <div class="catalog__wrapper">
+      <article class="catalog__item catalog__item--default">
+        <div class="catalog__text">
+        <p class="catalog__motto catalog__motto--active">Сказочное заморское явство</p>
+        <p class="catalog__motto catalog__motto--hover">Котэ не одобряет?</p>
+        <h2 class="catalog__item-title">Нямушка</h2>
+        <p class="catalog__flavor">с фуагра</p>
+        <ul class="catalog__description">
+        <li class="catalog__servings"><span>10</span> порций</li>
+        <li class="catalog__bonus">мышь в подарок</li>
+      </ul>
+        </div>
+        <div class="catalog__weight"><p class="catalog__weight-text">0,5 <span>кг</span></p></div>
+      </article>
+      <p class="catalog__order-text catalog__order-text--default">Чего сидишь? Порадуй котэ, <a href="#" class="catalog__order-link">купи.</a></p>
+      <p class="catalog__order-text catalog__order-text--selected">Печень утки разварная с артишоками.</p>
+      <p class="catalog__order-text catalog__order-text--disabled">Печалька, с фуа-гра закончился.</p>
       </div>
     </section>
     </div>
