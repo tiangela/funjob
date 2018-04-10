@@ -49,6 +49,36 @@ catItem.addEventListener('mouseleave', function() {
 });
 });
 
+/* С циклом for
+  for (var i = 0; i < catItems.length; i++) {
+  catItems[i].addEventListener('click', function() {
+    if (catItems[i].classList.contains('catalog__item--hover')) {
+      catItems[i].classList.remove('catalog__item--hover');
+      catItems[i].classList.add('catalog__item--selected');
+    }
+    if (catItems[i].classList.contains('catalog__item--default')) {
+      catItems[i].classList.toggle('catalog__item--selected');
+      catItems[i].classList.remove('catalog__item--default');
+    } else {
+      catItems[i].classList.toggle('catalog__item--default');
+      catItems[i].classList.remove('catalog__item--selected');
+    }
+  });
+
+  catItems[i].addEventListener('mouseenter', function() {
+    if (catItems[i].classList.contains('catalog__item--selected')) {
+      catItems[i].classList.remove('catalog__item--selected');
+      catItems[i].classList.add('catalog__item--hover');
+    }
+  });
+
+  catItems[i].addEventListener('mouseleave', function() {
+    if (catItems[i].classList.contains('catalog__item--hover')) {
+      catItems[i].classList.remove('catalog__item--hover');
+      catItems[i].classList.add('catalog__item--selected');
+    }
+  });
+}*/
 /// Полифилл
 
 // Шаги алгоритма ECMA-262, 5-е издание, 15.4.4.18
