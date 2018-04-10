@@ -1,84 +1,46 @@
-var catItem = document.querySelector('.catalog__item');
-var catItems = document.querySelectorAll('.catalog__item');
-var catItemSelected = document.querySelector('.catalog__item--selected');
-var catChoice = document.querySelector('.catalog__order-link');
-var catChoices = document.querySelectorAll('.catalog__order-link');
+var catalogItems = document.querySelectorAll('.catalog__wrapper');
 
-catChoices.forEach(function(catChoice) {
-catChoice.addEventListener('click', function() {
-  if (catItem.classList.contains('catalog__item--hover')) {
-    catItem.classList.remove('catalog__item--hover');
-  }
-  if (catItem.classList.contains('catalog__item--default')) {
-    catItem.classList.toggle('catalog__item--selected');
-    catItem.classList.remove('catalog__item--default');
-  } else {
-    catItem.classList.toggle('catalog__item--default');
-    catItem.classList.remove('catalog__item--selected');
-  }
+catalogItems.forEach(function(catalogItem) {
+     var card = catalogItem.querySelector('.catalog__item');
+     var buyButton = catalogItem.querySelector('.catalog__order-link');
+     card.addEventListener('click', function() {
+       if (card.classList.contains('catalog__item--hover')) {
+         card.classList.remove('catalog__item--hover');
+         card.classList.add('catalog__item--selected');
+       }
+       if (card.classList.contains('catalog__item--default')) {
+         card.classList.toggle('catalog__item--selected');
+         card.classList.remove('catalog__item--default');
+       } else {
+         card.classList.toggle('catalog__item--default');
+         card.classList.remove('catalog__item--selected');
+       }
 });
+   buyButton.addEventListener('click', function() {
+     if (card.classList.contains('catalog__item--hover')) {
+       card.classList.remove('catalog__item--hover');
+     }
+     if (card.classList.contains('catalog__item--default')) {
+       card.classList.toggle('catalog__item--selected');
+       card.classList.remove('catalog__item--default');
+     } else {
+       card.classList.toggle('catalog__item--default');
+       card.classList.remove('catalog__item--selected');
+     }
+   });
+   card.addEventListener('mouseenter', function() {
+     if (card.classList.contains('catalog__item--selected')) {
+       card.classList.remove('catalog__item--selected');
+       card.classList.add('catalog__item--hover');
+     }
+   });
+   card.addEventListener('mouseleave', function() {
+     if (card.classList.contains('catalog__item--hover')) {
+       card.classList.remove('catalog__item--hover');
+       card.classList.add('catalog__item--selected');
+     }
+   });
 });
-
-catItems.forEach(function(catItem) {
-catItem.addEventListener('click', function() {
-  if (catItem.classList.contains('catalog__item--hover')) {
-    catItem.classList.remove('catalog__item--hover');
-    catItem.classList.add('catalog__item--selected');
-  }
-  if (catItem.classList.contains('catalog__item--default')) {
-    catItem.classList.toggle('catalog__item--selected');
-    catItem.classList.remove('catalog__item--default');
-  } else {
-    catItem.classList.toggle('catalog__item--default');
-    catItem.classList.remove('catalog__item--selected');
-  }
-});
-
-catItem.addEventListener('mouseenter', function() {
-  if (catItem.classList.contains('catalog__item--selected')) {
-    catItem.classList.remove('catalog__item--selected');
-    catItem.classList.add('catalog__item--hover');
-  }
-});
-
-catItem.addEventListener('mouseleave', function() {
-  if (catItem.classList.contains('catalog__item--hover')) {
-    catItem.classList.remove('catalog__item--hover');
-    catItem.classList.add('catalog__item--selected');
-  }
-});
-});
-
-/* С циклом for
-  for (var i = 0; i < catItems.length; i++) {
-  catItems[i].addEventListener('click', function() {
-    if (catItems[i].classList.contains('catalog__item--hover')) {
-      catItems[i].classList.remove('catalog__item--hover');
-      catItems[i].classList.add('catalog__item--selected');
-    }
-    if (catItems[i].classList.contains('catalog__item--default')) {
-      catItems[i].classList.toggle('catalog__item--selected');
-      catItems[i].classList.remove('catalog__item--default');
-    } else {
-      catItems[i].classList.toggle('catalog__item--default');
-      catItems[i].classList.remove('catalog__item--selected');
-    }
-  });
-
-  catItems[i].addEventListener('mouseenter', function() {
-    if (catItems[i].classList.contains('catalog__item--selected')) {
-      catItems[i].classList.remove('catalog__item--selected');
-      catItems[i].classList.add('catalog__item--hover');
-    }
-  });
-
-  catItems[i].addEventListener('mouseleave', function() {
-    if (catItems[i].classList.contains('catalog__item--hover')) {
-      catItems[i].classList.remove('catalog__item--hover');
-      catItems[i].classList.add('catalog__item--selected');
-    }
-  });
-}*/
 /// Полифилл
 
 // Шаги алгоритма ECMA-262, 5-е издание, 15.4.4.18
