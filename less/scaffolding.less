@@ -1,4 +1,4 @@
- * {
+* {
   box-sizing: border-box;
 }
 
@@ -10,6 +10,10 @@ body {
   font-size: 18px;
   line-height: 27px;
   font-family: Trebuchet MS, 'Helvetica CY', 'DejaVu Sans', sans-serif;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 45%), linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 45%), url("../img/pat-mini.jpg");
+  background-repeat: repeat;
+  background-position: center;
+  background-color: @main-black;
   color: @grey-font;
 }
 
@@ -33,13 +37,12 @@ h2 {
   position: relative;
   z-index: 100;
 }
-
 @media @tablet-widths {
   h1 {
     font-size: 36px;
   }
 
-h2 {
-  font-size: 48px;
-}
+  h2 {
+    font-size: 48px;
+  }
 }

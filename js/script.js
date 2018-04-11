@@ -17,6 +17,7 @@ catalogItems.forEach(function(catalogItem) {
        }
 });
    buyButton.addEventListener('click', function() {
+     event.preventDefault();
      if (card.classList.contains('catalog__item--hover')) {
        card.classList.remove('catalog__item--hover');
      }

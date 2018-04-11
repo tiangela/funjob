@@ -188,9 +188,6 @@ th {
   src: url("../fonts/Exo2.0-Thin.otf");
   font-weight: normal;
 }
-.visible {
-  display: block;
-}
 * {
   box-sizing: border-box;
 }
@@ -201,6 +198,10 @@ body {
   font-size: 18px;
   line-height: 27px;
   font-family: Trebuchet MS, 'Helvetica CY', 'DejaVu Sans', sans-serif;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 45%), linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 45%), url("../img/pat-mini.jpg");
+  background-repeat: repeat;
+  background-position: center;
+  background-color: #000;
   color: #666;
 }
 img {
@@ -231,11 +232,30 @@ h2 {
 }
 .main {
   width: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 45%), linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 45%), url("../img/pat-mini.jpg");
-  background-repeat: repeat;
-  background-position: center;
-  background-color: #000;
-  padding-bottom: 30px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__container {
+  width: 320px;
+}
+@media (min-width: 768px) {
+  .main__container {
+    width: 768px;
+  }
+}
+@media (min-width: 1120px) {
+  .main__container {
+    width: 1120px;
+  }
+}
+.main__title {
+  text-align: center;
+}
+.main {
+  width: 100%;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -259,7 +279,7 @@ h2 {
 .catalog {
   width: 320px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -347,7 +367,7 @@ h2 {
 }
 .catalog__item--default ~ .catalog__order-text--default {
   display: block;
-  margin-left: 4px;
+  margin-left: 2px;
 }
 .catalog__item--selected {
   border: 2px solid #d91667;
@@ -383,7 +403,7 @@ h2 {
 }
 .catalog__item--selected ~ .catalog__order-text--selected {
   display: block;
-  margin-left: 1px;
+  margin-left: 2px;
 }
 .catalog__item--hover {
   border: 2px solid #e62e7a;
@@ -431,7 +451,7 @@ h2 {
 }
 .catalog__item--hover ~ .catalog__order-text--selected {
   display: block;
-  margin-left: 1px;
+  margin-left: 2px;
 }
 .catalog__item--disabled {
   pointer-events: none;
@@ -556,10 +576,10 @@ h2 {
   color: #1698d9;
   text-decoration: none;
   line-height: 14px;
-  padding-left: 0;
   overflow: hidden;
   border: none;
   background: none;
+  top: 2px;
 }
 .catalog__order-link::after {
   content: "";
@@ -567,7 +587,7 @@ h2 {
   width: 24px;
   height: 1px;
   bottom: 0;
-  left: 0px;
+  left: 0;
   border-bottom: 1px dashed #1698d9;
 }
 @media (min-width: 768px) {
@@ -575,7 +595,6 @@ h2 {
     width: 320px;
   }
   .catalog__title {
-    margin-top: 27px;
     margin-bottom: 43px;
   }
   .catalog__text {
@@ -592,12 +611,11 @@ h2 {
   }
   .catalog__flavor {
     font-size: 24px;
-    margin-top: -12px;
-    margin-left: 2px;
+    margin-left: 1px;
     letter-spacing: 0.5px;
   }
   .catalog__description {
-    margin-top: 15px;
+    margin-top: 3px;
   }
   .catalog__description li {
     font-size: 14px;
@@ -606,8 +624,8 @@ h2 {
   }
   .catalog__order-text {
     font-size: 13px;
-    margin-top: 14px;
-    margin-left: 4px;
+    margin-top: 13px;
+    margin-left: 1px;
     width: 100%;
   }
   .catalog__item {
@@ -617,8 +635,6 @@ h2 {
   }
   .catalog__order-link::after {
     width: 29px;
-    bottom: 1px;
-    left: 0;
   }
   .catalog__wrapper {
     margin-right: 45px;
@@ -627,7 +643,7 @@ h2 {
   .catalog__weight {
     width: 80px;
     height: 80px;
-    right: 11px;
+    right: 9px;
     bottom: 12px;
     text-align: center;
   }
