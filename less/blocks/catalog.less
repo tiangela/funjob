@@ -10,7 +10,7 @@
 .catalog__title {
   text-align: center;
   width: 100%;
-  margin-bottom: 43px;
+  margin-bottom: 30px;
 }
 
 .catalog__flavor {
@@ -36,7 +36,7 @@
   background-image: url("../img/cat.png");
   background-repeat: no-repeat;
   background-position: -80px 141px;
-  margin-top: 30px;
+  margin-top: 31px;
   margin-bottom: 5px;
 }
 
@@ -91,6 +91,7 @@
 
 .catalog__item--default ~ .catalog__order-text--default {
   display: block;
+  margin-left: 4px;
 }
 
 .catalog__item--selected {
@@ -130,6 +131,7 @@
 
 .catalog__item--selected ~ .catalog__order-text--selected {
   display: block;
+  margin-left: 1px;
 }
 
 .catalog__item--hover {
@@ -184,6 +186,7 @@
 
 .catalog__item--hover ~ .catalog__order-text--selected {
   display: block;
+  margin-left: 1px;
 }
 
 .catalog__item--disabled {
@@ -231,6 +234,7 @@
 
 .catalog__item--disabled ~ .catalog__order-text--disabled {
   display: block;
+  margin-left: 1px;
 }
 
 .catalog__item--disabled ~ .catalog__order-text--default {
@@ -345,8 +349,13 @@
     .container();
   }
 
+  .catalog__title {
+    margin-top: 27px;
+    margin-bottom: 43px;
+  }
+
   .catalog__text {
-    margin-left: 42px;
+    margin-left: 44px;
   }
 
   .catalog__motto {
@@ -361,13 +370,13 @@
 
   .catalog__flavor {
     font-size: 24px;
-    margin-top: -13px;
+    margin-top: -12px;
     margin-left: 2px;
     letter-spacing: 0.5px;
   }
 
   .catalog__description {
-    margin-top: 17px;
+    margin-top: 15px;
     li {
       font-size: 14px;
       line-height: 15px;
@@ -377,20 +386,21 @@
 
   .catalog__order-text {
     font-size: 13px;
-    padding-top: 11px;
+    margin-top: 14px;
+    margin-left: 4px;
     width: 100%;
   }
 
   .catalog__item {
     width: 320px;
-    min-height: 437px;
+    min-height: 438px;
     background-position: -27px 161px;
   }
 
   .catalog__order-link::after {
     width: 29px;
-    bottom: 0;
-    left: 1px;
+    bottom: 1px;
+    left: 0;
   }
 
   .catalog__wrapper {
@@ -401,8 +411,8 @@
   .catalog__weight {
     width: 80px;
     height: 80px;
-    right: 9px;
-    bottom: 9px;
+    right: 11px;
+    bottom: 12px;
     text-align: center;
   }
 
@@ -412,7 +422,7 @@
     span {
       font-size: 21px;
       line-height: 22px;
-      padding-top: 7px;
+      padding-top: 9px;
     }
   }
 
