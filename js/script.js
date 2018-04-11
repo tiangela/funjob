@@ -1,4 +1,4 @@
-var catalogItems = document.querySelectorAll('.catalog__wrapper');
+var catalogItems = Array.prototype.slice.call(document.querySelectorAll('.catalog__wrapper'));
 
 catalogItems.forEach(function(catalogItem) {
      var card = catalogItem.querySelector('.catalog__item');
@@ -101,4 +101,4 @@ if (!Array.prototype.forEach) {
     }
     // 8. Вернём undefined.
   };
-}
+};
