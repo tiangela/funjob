@@ -1,8 +1,8 @@
-var catalogItems = Array.prototype.slice.call(document.querySelectorAll('.catalog__wrapper'));
+var catalogItems = Array.prototype.slice.call(document.querySelectorAll('.catalog__item'));
 
-catalogItems.forEach(function(catalogItem) {
-     var card = catalogItem.querySelector('.catalog__item');
-     var buyButton = catalogItem.querySelector('.catalog__order-link');
+/*catalogItems.forEach(function(catalogItem) {
+  var card = catalogItem;
+  var buyButton = catalogItem.querySelector('.catalog__order-link');
      card.addEventListener('click', function() {
        if (card.classList.contains('catalog__item--hover')) {
          card.classList.remove('catalog__item--hover');
@@ -18,6 +18,7 @@ catalogItems.forEach(function(catalogItem) {
 });
    buyButton.addEventListener('click', function() {
      event.preventDefault();
+     event.stopPropagation();
      if (card.classList.contains('catalog__item--hover')) {
        card.classList.remove('catalog__item--hover');
      }
@@ -41,7 +42,68 @@ catalogItems.forEach(function(catalogItem) {
        card.classList.add('catalog__item--selected');
      }
    });
+});*/
+
+
+catalogItems.forEach(function(catalogItem) {
+  var item = catalogItem;
+  var buyButton = catalogItem.querySelector('.catalog__order-link');
+  var card = catalogItem.querySelector('.card');
+  var cardText = card.querySelector('.card__text');
+  var cardHover = cardText.querySelector('.card__motto--hover');
+  var cardActive = cardText.querySelector('.card__motto--active');
+
+     item.addEventListener('click', function() {
+       if (item.classList.contains('catalog__item--hover')) {
+         item.classList.remove('catalog__item--hover');
+         item.classList.add('catalog__item--selected');
+         cardHover.style.display = 'none';
+         cardActive.style.display = 'block';
+       }
+       if (item.classList.contains('catalog__item--default')) {
+         item.classList.add('catalog__item--selected');
+         item.classList.remove('catalog__item--default');
+         cardHover.style.display = 'none';
+         cardActive.style.display = 'block';
+       } else {
+         item.classList.add('catalog__item--default');
+         item.classList.remove('catalog__item--selected');
+         cardHover.style.display = 'none';
+         cardActive.style.display = 'block';
+       }
 });
+   buyButton.addEventListener('click', function() {
+     event.preventDefault();
+     event.stopPropagation();
+     if (item.classList.contains('catalog__item--hover')) {
+       item.classList.remove('catalog__item--hover');
+     }
+     if (item.classList.contains('catalog__item--default')) {
+       item.classList.add('catalog__item--selected');
+       item.classList.remove('catalog__item--default');
+     } else {
+       item.classList.add('catalog__item--default');
+       item.classList.remove('catalog__item--selected');
+     }
+   });
+   item.addEventListener('mouseenter', function() {
+     if (item.classList.contains('catalog__item--selected')) {
+       item.classList.remove('catalog__item--selected');
+       item.classList.add('catalog__item--hover');
+      cardActive.style.display = 'none';
+      cardHover.style.display = 'block';
+     }
+   });
+   item.addEventListener('mouseleave', function() {
+     if (item.classList.contains('catalog__item--hover')) {
+       item.classList.remove('catalog__item--hover');
+       item.classList.add('catalog__item--selected');
+       cardHover.style.display = 'none';
+       cardActive.style.display = 'block';
+     }
+   });
+});
+
 /// Полифилл
 
 // Шаги алгоритма ECMA-262, 5-е издание, 15.4.4.18
