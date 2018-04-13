@@ -53,55 +53,69 @@ catalogItems.forEach(function(catalogItem) {
   var cardHover = cardText.querySelector('.card__motto--hover');
   var cardActive = cardText.querySelector('.card__motto--active');
 
-     item.addEventListener('click', function() {
-       if (item.classList.contains('catalog__item--hover')) {
-         item.classList.remove('catalog__item--hover');
-         item.classList.add('catalog__item--selected');
-         cardHover.style.display = 'none';
-         cardActive.style.display = 'block';
-       }
-       if (item.classList.contains('catalog__item--default')) {
-         item.classList.add('catalog__item--selected');
-         item.classList.remove('catalog__item--default');
-         cardHover.style.display = 'none';
-         cardActive.style.display = 'block';
-       } else {
-         item.classList.add('catalog__item--default');
-         item.classList.remove('catalog__item--selected');
-         cardHover.style.display = 'none';
-         cardActive.style.display = 'block';
-       }
-});
-   buyButton.addEventListener('click', function() {
-     event.preventDefault();
-     event.stopPropagation();
-     if (item.classList.contains('catalog__item--hover')) {
-       item.classList.remove('catalog__item--hover');
-     }
-     if (item.classList.contains('catalog__item--default')) {
-       item.classList.add('catalog__item--selected');
-       item.classList.remove('catalog__item--default');
-     } else {
-       item.classList.add('catalog__item--default');
-       item.classList.remove('catalog__item--selected');
-     }
-   });
-   item.addEventListener('mouseenter', function() {
-     if (item.classList.contains('catalog__item--selected')) {
-       item.classList.remove('catalog__item--selected');
-       item.classList.add('catalog__item--hover');
+  item.addEventListener('click', function() {
+    if (item.classList.contains('catalog__item--hover')) {
+      item.classList.remove('catalog__item--hover');
+      item.classList.add('catalog__item--selected');
+      card.classList.remove('card--hover');
+      card.classList.add('card--selected');
+      cardHover.style.display = 'none';
+      cardActive.style.display = 'block';
+    }
+    if (item.classList.contains('catalog__item--default')) {
+      item.classList.remove('catalog__item--default');
+      item.classList.add('catalog__item--selected');
+      card.classList.remove('card--default');
+      card.classList.add('card--selected');
+      cardHover.style.display = 'none';
+      cardActive.style.display = 'block';
+    } else {
+      item.classList.remove('catalog__item--selected');
+      item.classList.add('catalog__item--default');
+      card.classList.remove('card--selected');
+      card.classList.add('card--default');
+      cardHover.style.display = 'none';
+      cardActive.style.display = 'block';
+    }
+  });
+  buyButton.addEventListener('click', function() {
+    event.preventDefault();
+    event.stopPropagation();
+    if (item.classList.contains('catalog__item--hover')) {
+      item.classList.remove('catalog__item--hover');
+    }
+    if (item.classList.contains('catalog__item--default')) {
+      item.classList.add('catalog__item--selected');
+      item.classList.remove('catalog__item--default');
+      card.classList.remove('card--default');
+      card.classList.add('card--selected');
+    } else {
+      item.classList.add('catalog__item--default');
+      item.classList.remove('catalog__item--selected');
+      card.classList.remove('card--selected');
+      card.classList.add('card--default');
+    }
+  });
+  item.addEventListener('mouseenter', function() {
+    if (item.classList.contains('catalog__item--selected')) {
+      item.classList.remove('catalog__item--selected');
+      item.classList.add('catalog__item--hover');
+      card.classList.remove('card--selected');
+      card.classList.add('card--hover');
       cardActive.style.display = 'none';
       cardHover.style.display = 'block';
-     }
-   });
-   item.addEventListener('mouseleave', function() {
-     if (item.classList.contains('catalog__item--hover')) {
-       item.classList.remove('catalog__item--hover');
-       item.classList.add('catalog__item--selected');
-       cardHover.style.display = 'none';
-       cardActive.style.display = 'block';
-     }
-   });
+    }
+  });
+  item.addEventListener('mouseleave', function() {
+    if (item.classList.contains('catalog__item--hover')) {
+      item.classList.remove('catalog__item--hover');
+      item.classList.add('catalog__item--selected');
+      card.classList.remove('card--hover');
+      card.classList.add('card--selected');
+      cardHover.style.display = 'none';
+      cardActive.style.display = 'block';
+    }
+  });
 });
 
 /// Полифилл
@@ -109,9 +123,9 @@ catalogItems.forEach(function(catalogItem) {
 // Шаги алгоритма ECMA-262, 5-е издание, 15.4.4.18
 // Ссылка (en): http://es5.github.io/#x15.4.4.18
 // Ссылка (ru): http://es5.javascript.ru/x15.4.html#x15.4.4.18
-if (!Array.prototype.forEach) {
+/*if (!Array.prototype.forEach) {
 
-  Array.prototype.forEach = function (callback, thisArg) {
+  Array.prototype.forEach = function(callback, thisArg) {
 
     var T, k;
 
@@ -129,7 +143,7 @@ if (!Array.prototype.forEach) {
     // 4. Если IsCallable(callback) равен false, выкинем исключение TypeError.
     // Смотрите: http://es5.github.com/#x9.11
     if (typeof callback !== 'function') {
-        throw new TypeError(callback + ' is not a function');
+      throw new TypeError(callback + ' is not a function');
     }
 
     // 5. Если thisArg присутствует, положим T равным thisArg; иначе положим T равным undefined.
@@ -164,4 +178,4 @@ if (!Array.prototype.forEach) {
     }
     // 8. Вернём undefined.
   };
-};
+};*/
