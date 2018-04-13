@@ -1,48 +1,62 @@
-* {
-  box-sizing: border-box;
+*
+{
+    box-sizing: border-box;
 }
 
-p {
-  margin: 0;
+p
+{
+    margin: 0;
 }
 
-body {
-  font-size: 18px;
-  line-height: 27px;
-  font-family: Trebuchet MS, 'Helvetica CY', 'DejaVu Sans', sans-serif;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 45%), linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 45%), url("../img/pat-mini.jpg");
-  background-repeat: repeat;
-  background-position: center;
-  background-color: @main-black;
-  color: @grey-font;
+body
+{
+    font-family: Trebuchet MS, 'Helvetica CY', 'DejaVu Sans', sans-serif;
+    font-size: 18px;
+    line-height: 27px;
+
+    color: @grey-font;
+    background-color: @main-black;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, transparent 45%), linear-gradient(to top, rgba(0, 0, 0, .5) 0%, transparent 45%), url('../img/pat-mini.jpg');
+    background-repeat: repeat;
+    background-position: center;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+img
+{
+    max-width: 100%;
+    height: auto;
 }
 
-h1 {
-  font-family: 'Exo 2', Arial, sans-serif;
-  font-weight: normal;
-  font-size: 24px;
-  color: @title-color;
+h1
+{
+    font-family: 'Exo 2', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+
+    color: @title-color;
 }
 
-h2 {
-  color: @main-black;
-  font-size: 36px;
-  line-height: normal;
-  margin: 0;
-  position: relative;
-  z-index: 100;
-}
-@media @tablet-widths {
-  h1 {
+h2
+{
     font-size: 36px;
-  }
+    line-height: normal;
 
-  h2 {
-    font-size: 48px;
-  }
+    position: relative;
+    z-index: 100;
+
+    margin: 0;
+
+    color: @main-black;
+}
+@media @tablet-widths
+{
+    h1
+    {
+        font-size: 36px;
+    }
+
+    h2
+    {
+        font-size: 48px;
+    }
 }

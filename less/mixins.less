@@ -1,19 +1,23 @@
-.clearfix() {
-  &::after {
-    content: "";
+.clearfix()
+{
+    &::after
+    {
+        display: table;
+        clear: both;
 
-    display: table;
-    clear: both;
-  }
+        content: '';
+    }
 }
 
- .container() {
-  width: 320px;
-
-@media @tablet-widths {
-    width: 768px;
-  }
-@media @desktop-widths {
-  width: 1120px;
-}
+.container()
+{
+    width: 320px;
+    @media @tablet-widths
+    {
+        width: 768px;
+    }
+    @media @desktop-widths
+    {
+        width: 1120px;
+    }
 }
