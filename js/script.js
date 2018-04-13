@@ -9,6 +9,9 @@ catalogItems.forEach(function(catalogItem) {
   var cardActive = cardText.querySelector('.card__motto--active');
 
   item.addEventListener('click', function() {
+    if (item.classList.contains('catalog__item--disabled')) {
+      return false;
+    }
     if (item.classList.contains('catalog__item--hover')) {
       item.classList.remove('catalog__item--hover');
       item.classList.add('catalog__item--selected');
@@ -24,7 +27,8 @@ catalogItems.forEach(function(catalogItem) {
       card.classList.add('card--selected');
       cardHover.style.display = 'none';
       cardActive.style.display = 'block';
-    } else {
+    }
+    else {
       item.classList.remove('catalog__item--selected');
       item.classList.add('catalog__item--default');
       card.classList.remove('card--selected');

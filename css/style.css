@@ -233,9 +233,7 @@ h2 {
 .main {
   display: flex;
   width: 100%;
-  margin: auto;
-  padding-top: 26px;
-  padding-bottom: 0px;
+  margin: 25px auto;
   justify-content: center;
   align-items: center;
 }
@@ -540,6 +538,9 @@ h2 {
 .catalog__item--disabled .catalog__weight {
   background-color: #b3b3b3;
 }
+.catalog__item--disabled .catalog__weight:hover {
+  background-color: #b3b3b3;
+}
 .catalog__item--disabled .catalog__order-text--disabled {
   display: block;
 }
@@ -610,7 +611,7 @@ h2 {
 }
 @media (min-width: 768px) {
   .catalog__title {
-    padding-bottom: 22px;
+    padding-bottom: 23px;
   }
   .catalog__order-text {
     font-size: 13px;
